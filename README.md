@@ -28,7 +28,9 @@ using valdr looks like this:
 
 <script>
 
-  // initialize all elements of class 'valdr' with default or element data values like so -
+  // initialize all elements of class 'valdr' with default or 
+  // inline element data values like so -
+
   //valdr.init(); 
 
 
@@ -60,4 +62,7 @@ using valdr looks like this:
 
 Anyway, its entirely unfinished right now, maybe I'll work on it later.
 
+Update: the arcanum of gh-pages having been deciphered and Bowser defeated, the demo page awaits!
+
+[See valdr in action](http://gschorno.github.io/valdr/)
 
