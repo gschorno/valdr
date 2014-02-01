@@ -38,9 +38,13 @@
       if (control.hasAttribute('data-max')) max = parseFloat(control.getAttribute('data-max')) || max;
       if (control.hasAttribute('data-snap')) snap = parseFloat(control.getAttribute('data-snap')) || snap;
 
-      var startPosition = null, // array when active, null otherwise, beginning drag x, y position
-        startValue, // starting value of element
-        oneoversnap = (snap < 1) ? parseInt(1/snap) : 1/parseInt(snap);//  1/snap must be integer if snap<1, int if snap>1
+      var 
+        // array when active, null otherwise, beginning drag x, y position
+        startPosition = null, 
+        // starting value of element
+        startValue, 
+        //  1/snap must be an integer if snap < 1
+        oneoversnap = (snap < 1) ? parseInt(1/snap) : 1/parseInt(snap);
 
 
       // helpers
