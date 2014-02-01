@@ -3,6 +3,7 @@ valdr - Value Dragger
 
 experimenting over here, something very simple. This project is largely about learning my way around github.
 
+valdr lets you click and drag on a numeric text control to change the value.
 
 Use
 ---
