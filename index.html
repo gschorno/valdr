@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>valdr (Value Dragger) example</title>
+
+<style>
+body {
+  font-size: 12px;
+  font: 14px "Helvetica Neue", "Lucida Grande", "Arial";
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  padding: 0px;
+  background-color:rgb(46,45,48);
+  color:rgb(190,190,200);
+  position:relative;
+}
+
+.main {
+  margin:12px;
+  padding:11px;
+  width:95%;
+  height:auto;
+  float:left;
+  min-height:500px;
+  background-color: rgba(126, 150, 180, 0.3);
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px #000;
+}
+
+.panel {
+  padding: 59px 11px 65px 100px; 
+  margin: 52px 56px;
+  width: 80%;
+  min-height:inherit;
+}
+
+.inset {
+  padding: 31px 53px; 
+  margin: 28px 21px;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 1px 12px rgba(10,10,20,0.6);
+  border-radius: 5px;
+}
+
+.topbar {
+  padding:12px;
+  position:relative;
+  left:66px;
+  top:51px;
+  color:rgba(255,255,255,0.7);
+  background-color:rgba(20,20,30,0.3);
+  border-radius: 5px 5px 0px 0px;
+  max-width: 70%;
+}
+
+input.valdr {
+  border: 1px #abc;
+  margin-left:20px;
+  font-size: 16px;
+  cursor: ew-resize;
+  width:5em;
+}
+
+#bigtarget {
+  cursor: ew-resize;  
+}
+
+</style>
+
+<script type="text/javascript" src="valdr.js"></script>
+
+<script>
+
+window.onload = setup;
+
+function setup() {
+
+  // this works, but doesnt handle js parameters like the second example below
+  //valdr.init();
+
+  // javascript parameters
+  valdr0 = valdr.create('valuetest0', { min: -100, max: 100, snap: 2 });  
+
+  // javascript parameters, different target and text input controls
+  valdr1 = valdr.create({ controlid: 'valuetest1', targetid: 'bigtarget', min: -2, max: 2, snap: 0.001, value: 1 } );  
+
+  // uses element data values
+  valdr2 = valdr.create('valuetest2');  
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="topbar"><em>valdr (value dragger) javascript control</em></div>
+
+<div class="main panel">
+
+<div >click and drag on the text edit controls</div>
+
+<div class="inset">
+  <p>javascript settings: <pre>{ min:-100, max: 100, snap:2 }</pre></p>
+<div>
+<input type="text" id="valuetest0" class="valdr" value="0"></input>
+</div>
+</div>
+
+<div class="inset" id="bigtarget">
+  <p><em>drag anywhere on this panel!</em></p>
+  <p>javascript settings: <pre>{ min:-2, max: 2, snap:0.001, value:1 }</pre></p>
+<div>
+<input type="text" id="valuetest1" class="valdr" value="0"></input>
+</div>
+</div>
+
+<div class="inset">
+  <p>settings from data values:
+  <pre>&lt;class="valdr" data-min="-2.5" data-max="2.5" 
+    data-dx="0.01" data-snap="0.05"&gt;</pre></p>
+
+<div>
+<input id="valuetest2" class="valdr" data-min="-2.5" data-max="2.5" data-dx="0.01" data-snap="0.05" value="1"></input>
+</div>
+</div>
+
+</div>
+
+</body>
+
+</html>
